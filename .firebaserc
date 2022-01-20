@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gerencial-plantao": {
+      "hosting": {
+        "gerencial": [
+          "gerencial-plantao"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gerencial-plantao"
+  }
+}

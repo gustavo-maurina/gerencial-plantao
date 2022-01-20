@@ -1,0 +1,56 @@
+<div class="w-full h-full flex justify-center items-center bg-blue-300">
+  <mat-card class="h-4/5 !p-8 !drop-shadow-xl">
+    <div class="flex flex-col items-center justify-around h-full w-full">
+      <div>
+        <p class="text-2xl font-sans">Faça login para acessar sua conta</p>
+      </div>
+      <div>
+        <p class="text-3xl text-center">LOGO</p>
+      </div>
+      <form
+        (submit)="fazerLogin($event)"
+        autocomplete="off"
+        class="flex flex-col items-center w-4/5"
+      >
+        <div class="w-full">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="text" />
+          </mat-form-field>
+        </div>
+        <div class="w-full">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" class="!outline-blue-300" />
+          </mat-form-field>
+        </div>
+        <div class="w-full flex justify-center">
+          <button
+            class="w-full bg-blue-600 text-white !mt-4 !font-normal"
+            mat-raised-button
+            type="submit"
+          >
+            Entrar
+          </button>
+        </div>
+        <div class="w-full flex justify-center">
+          <button
+            (click)="loginWithGoogle()"
+            class="w-full bg-white text-gray-800 !mt-1 !font-normal"
+            mat-raised-button
+            type="button"
+          >
+            <img
+              class="inline mr-2"
+              src="../../../assets/imgs/google_logo.png"
+              width="18"
+              height="18"
+            />
+
+            Continuar com Google
+          </button>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>
