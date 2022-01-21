@@ -8,7 +8,10 @@ const routes: Routes = [
   {
     component: DefaultLayoutComponent,
     path: '',
-    children: [{ path: 'inicio', component: InicioComponent }],
+    children: [
+      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+      { path: 'inicio', component: InicioComponent },
+    ],
   },
   { component: LoginComponent, path: 'login' },
 ];
