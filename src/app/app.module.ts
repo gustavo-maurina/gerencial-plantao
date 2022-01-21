@@ -14,13 +14,19 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { NavBarModule } from './components/nav-bar/nav-bar.module';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DefaultLayoutComponent],
+  declarations: [AppComponent, LoginComponent, DefaultLayoutComponent, InicioComponent, TopBarComponent],
   imports: [
+    /* Módulos da aplicação */
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NavBarModule,
+    /* Módulos de terceiros */
     MatCardModule,
     MatInputModule,
     MatButtonModule,

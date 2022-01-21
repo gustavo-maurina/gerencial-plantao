@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import hasValidSession from 'src/utils/hasValidSession';
+import { hasValidSession } from 'src/utils/sessionUtils';
 
 @Component({
   selector: 'app-default-layout',

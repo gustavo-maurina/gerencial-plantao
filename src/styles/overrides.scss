@@ -2,8 +2,10 @@
   padding-bottom: 0 !important;
 }
 
+.mat-form-field-appearance-outline .mat-form-field-outline:focus {
+  color: red !important;
+}
+
 .mat-form-field-appearance-outline .mat-form-field-outline {
-  :focus-visible {
-    color: rgb(68, 147, 250) !important;
-  }
+  // color: white;
 }

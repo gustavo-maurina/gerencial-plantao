@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import { User } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
+import { setNewSession } from 'src/utils/sessionUtils';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +11,21 @@ import firebase from 'firebase/compat/app';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(public auth: AngularFireAuth) {
-    // console.log(window.firebase);
-  }
+  constructor(public auth: AngularFireAuth, private router: Router) {}
+
+  user: any;
 
   async fazerLogin(e: SubmitEvent): Promise<void> {
     e.preventDefault();
-    console.log('login');
   }
 
   loginWithGoogle(): void {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.auth
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((response) => {
+        setNewSession(true);
+        this.router.navigate(['']);
+      });
   }
 
   ngOnInit(): void {}
