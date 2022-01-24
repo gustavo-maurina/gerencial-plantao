@@ -1,5 +1,5 @@
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
-@import "../src/styles/overrides.scss";
+@import "../src/styles/overrides.css";
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";

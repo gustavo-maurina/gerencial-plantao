@@ -5,7 +5,7 @@ import { hasValidSession } from 'src/utils/sessionUtils';
 @Component({
   selector: 'app-default-layout',
   templateUrl: './default-layout.component.html',
-  styleUrls: ['./default-layout.component.scss'],
+  styleUrls: ['./default-layout.component.css'],
 })
 export class DefaultLayoutComponent implements OnInit {
   constructor(router: Router) {
