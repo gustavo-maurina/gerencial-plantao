@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultLayoutComponent } from './components/default-layout/default-layout.component';
-import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -17,9 +16,16 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DefaultLayoutComponent, InicioComponent, TopBarComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DefaultLayoutComponent,
+    InicioComponent,
+    TopBarComponent,
+  ],
   imports: [
     /* Módulos da aplicação */
     BrowserModule,
@@ -27,9 +33,9 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     BrowserAnimationsModule,
     NavBarModule,
     /* Módulos de terceiros */
-    MatCardModule,
     MatInputModule,
     MatButtonModule,
+    NgxChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
