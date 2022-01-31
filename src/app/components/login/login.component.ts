@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { User } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
 import { setNewSession } from 'src/utils/sessionUtils';
 

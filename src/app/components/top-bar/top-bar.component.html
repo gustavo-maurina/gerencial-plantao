@@ -5,12 +5,14 @@
     </li>
     <li class="flex items-center gap-3">
       <div
-        class="flex items-center justify-center rounded-full bg-blue-200 w-10 h-10"
+        class="flex items-center justify-center rounded-full bg-blue-200 w-10 h-10 drop-shadow"
       >
         GF
       </div>
       <p>Minha conta</p>
       <button
+        (click)="logout()"
+        title="Sair da conta"
         class="ml-5 flex items-center justify-center rounded bg-red-400 shadow-md h-8 w-8"
       >
         <i class="text-md las la-power-off text-white"></i>

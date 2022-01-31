@@ -6,3 +6,7 @@ export function hasValidSession(): boolean {
 export function setNewSession(value: boolean): void {
   localStorage.setItem('session', value ? '1' : '0');
 }
+
+export function removeCurrentSession() {
+  localStorage.removeItem('session');
+}

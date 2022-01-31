@@ -1,0 +1,91 @@
+<main class="w-full h-full flex justify-center items-center bg-blue-300">
+  <div class="min-h-4/5 !p-8 !drop-shadow-xl bg-white rounded w-2/5">
+    <div class="flex flex-col items-center justify-around h-full w-full">
+      <div class="mb-10">
+        <p class="text-2xl font-sans">Faça seu cadastro</p>
+      </div>
+
+      <form autocomplete="off" class="flex flex-col items-center w-4/5">
+        <div id="contentWrapper" class="flex justify-center w-full gap-4">
+          <div class="w-full flex flex-col gap-2">
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Nome *</mat-label>
+                <input matInput type="text" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Sobrenome *</mat-label>
+                <input matInput type="text" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>E-mail *</mat-label>
+                <input matInput type="text" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Senha *</mat-label>
+                <input matInput type="password" class="!outline-blue-300" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Confirme sua senha *</mat-label>
+                <input matInput type="password" class="!outline-blue-300" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="border-l-2 border-l-grey-100"></div>
+          <div class="w-full flex flex-col gap-2">
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>CRM *</mat-label>
+                <input matInput type="text" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Cidade *</mat-label>
+                <input matInput type="password" class="!outline-blue-300" />
+              </mat-form-field>
+            </div>
+            <div class="w-full">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Data de nascimento *</mat-label>
+                <input matInput type="password" class="!outline-blue-300" />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-center mt-10">
+          <button
+            class="w-48 bg-blue-600 text-white !mt-4 !font-normal"
+            mat-raised-button
+            type="submit"
+          >
+            Criar conta
+          </button>
+        </div>
+        <div class="mt-10 w-full flex flex-col justify-center items-center">
+          <p class="text-center m-0">Já possui conta?</p>
+          <a routerLink="/login">
+            <button
+              class="w-48 bg-blue-900 text-white !mt-2 !font-normal"
+              mat-raised-button
+              type="submit"
+            >
+              <p class="m-0 flex items-center gap-1 justify-center">
+                <i class="las la-arrow-left text-lg"></i> Voltar para login
+              </p>
+            </button>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

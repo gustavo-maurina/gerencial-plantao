@@ -1,0 +1,53 @@
+<main class="w-full h-full flex justify-center items-center bg-blue-300">
+  <div class="h-2/5 !p-8 !drop-shadow-xl bg-white rounded">
+    <div class="flex flex-col items-center justify-around h-full w-full">
+      <div>
+        <p class="text-2xl font-sans">Escolha o tipo de cadastro:</p>
+      </div>
+
+      <div class="flex flex-col items-center w-5/5">
+        <div class="w-full flex gap-3">
+          <div class="w-full flex justify-center">
+            <a routerLink="/criar-conta-medico">
+              <button
+                class="w-full bg-blue-500 text-white !mt-4 !font-normal"
+                mat-raised-button
+              >
+                <p class="m-0 flex items-center gap-2">
+                  <i class="las la-user-nurse"></i> Médico
+                </p>
+              </button>
+            </a>
+          </div>
+          <div class="w-full flex justify-center">
+            <a routerLink="/criar-conta-hospital">
+              <button
+                class="w-full bg-blue-500 text-white !mt-4 !font-normal"
+                mat-raised-button
+                type="submit"
+              >
+                <p class="m-0 flex items-center gap-2">
+                  <i class="las la-hospital"></i> Hospital
+                </p>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-10 w-full flex flex-col justify-center items-center">
+          <a routerLink="/login">
+            <button
+              class="bg-blue-900 text-white !mt-2 !font-normal"
+              mat-raised-button
+              type="submit"
+            >
+              <p class="m-0 flex items-center gap-1 justify-center">
+                <i class="las la-arrow-left text-lg"></i> Voltar para login
+              </p>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

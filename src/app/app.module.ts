@@ -17,6 +17,9 @@ import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TipoCadastroComponent } from './components/tipo-cadastro/tipo-cadastro.component';
+import { CriarContaMedicoComponent } from './components/criar-conta-medico/criar-conta-medico.component';
+import { CriarContaHospitalComponent } from './components/criar-conta-hospital/criar-conta-hospital.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     DefaultLayoutComponent,
     InicioComponent,
     TopBarComponent,
+    TipoCadastroComponent,
+    CriarContaMedicoComponent,
+    CriarContaHospitalComponent,
   ],
   imports: [
     /* Módulos da aplicação */
