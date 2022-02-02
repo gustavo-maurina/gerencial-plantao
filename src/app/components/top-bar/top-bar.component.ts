@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { removeCurrentSession } from 'src/utils/sessionUtils';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,11 +8,10 @@ import { removeCurrentSession } from 'src/utils/sessionUtils';
   styleUrls: ['./top-bar.component.css'],
 })
 export class TopBarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AngularFireAuth) {}
 
   logout() {
-    removeCurrentSession();
-    this.router.navigate(['login']);
+    this.auth.signOut().then(() => this.router.navigate(['login']));
   }
 
   ngOnInit(): void {}

@@ -20,6 +20,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TipoCadastroComponent } from './components/tipo-cadastro/tipo-cadastro.component';
 import { CriarContaMedicoComponent } from './components/criar-conta-medico/criar-conta-medico.component';
 import { CriarContaHospitalComponent } from './components/criar-conta-hospital/criar-conta-hospital.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from './RequestInterceptor';
+import { AuthGuardModule } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -38,16 +42,21 @@ import { CriarContaHospitalComponent } from './components/criar-conta-hospital/c
     AppRoutingModule,
     BrowserAnimationsModule,
     NavBarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     /* Módulos de terceiros */
     MatInputModule,
     MatButtonModule,
     NgxChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AuthGuardModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

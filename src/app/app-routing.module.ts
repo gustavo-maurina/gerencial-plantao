@@ -6,19 +6,36 @@ import { DefaultLayoutComponent } from './components/default-layout/default-layo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { TipoCadastroComponent } from './components/tipo-cadastro/tipo-cadastro.component';
+import {
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+  canActivate,
+} from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToAccount = () => redirectLoggedInTo(['inicio']);
 
 const routes: Routes = [
   /** Rotas carregadas dentro do sistema */
   {
     component: DefaultLayoutComponent,
     path: '',
+    ...canActivate(redirectUnauthorizedToHome),
     children: [
-      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+      {
+        path: '',
+        redirectTo: 'inicio',
+        pathMatch: 'full',
+      },
       { path: 'inicio', component: InicioComponent },
     ],
   },
   /** Rotas carregadas fora do sistema */
-  { component: LoginComponent, path: 'login' },
+  {
+    component: LoginComponent,
+    path: 'login',
+    ...canActivate(redirectLoggedInToAccount),
+  },
   { component: CriarContaMedicoComponent, path: 'criar-conta-medico' },
   { component: CriarContaHospitalComponent, path: 'criar-conta-hospital' },
   { component: TipoCadastroComponent, path: 'tipo-cadastro' },

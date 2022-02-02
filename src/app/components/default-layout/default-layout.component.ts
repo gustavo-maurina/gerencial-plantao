@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { hasValidSession } from 'src/utils/sessionUtils';
+import { onAuthStateChanged } from 'firebase/auth';
 
 @Component({
   selector: 'app-default-layout',
@@ -8,9 +9,7 @@ import { hasValidSession } from 'src/utils/sessionUtils';
   styleUrls: ['./default-layout.component.css'],
 })
 export class DefaultLayoutComponent implements OnInit {
-  constructor(router: Router) {
-    if (!hasValidSession()) router.navigate(['login']);
-  }
+  constructor(private router: Router, private auth: AngularFireAuth) {}
 
   ngOnInit(): void {}
 }

@@ -13,6 +13,7 @@
         />
       </div>
       <form
+        [formGroup]="loginForm"
         (submit)="fazerLogin($event)"
         autocomplete="off"
         class="flex flex-col items-center w-4/5"
@@ -20,13 +21,18 @@
         <div class="w-full">
           <mat-form-field class="w-full" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput type="text" />
+            <input formControlName="email" matInput type="email" />
           </mat-form-field>
         </div>
         <div class="w-full">
           <mat-form-field class="w-full" appearance="outline">
             <mat-label>Senha</mat-label>
-            <input matInput type="password" class="!outline-blue-300" />
+            <input
+              formControlName="senha"
+              matInput
+              type="password"
+              class="!outline-blue-300"
+            />
           </mat-form-field>
         </div>
         <div class="w-full flex justify-center">
