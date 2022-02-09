@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './RequestInterceptor';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AuthGuardModule } from '@angular/fire/auth-guard';
     TipoCadastroComponent,
     CriarContaMedicoComponent,
     CriarContaHospitalComponent,
+    DashboardComponent,
   ],
   imports: [
     /* Módulos da aplicação */

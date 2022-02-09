@@ -31,18 +31,14 @@ export class LoginComponent implements OnInit {
 
     this.auth
       .signInWithEmailAndPassword(email, senha)
-      .then((res: any) => {
-        console.log(res);
-
-        this.router.navigate(['inicio']);
-      })
+      .then(() => this.router.navigate(['inicio']))
       .catch(console.log);
   }
 
   loginWithGoogle(): void {
     this.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(console.log)
+      .then(() => this.router.navigate(['inicio']))
       .catch(console.log);
   }
 

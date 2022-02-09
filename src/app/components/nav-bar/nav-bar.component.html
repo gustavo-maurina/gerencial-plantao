@@ -1,5 +1,6 @@
 <nav
-  class="w-[250px] h-full min-w-[230px] shadow-2xl border-[1px] border-opacity-20 border-black bg-gray-800 text-zinc-200"
+  style="background: linear-gradient(135deg, #232526 0%, #414345 100%)"
+  class="w-[250px] h-full min-w-[230px] shadow-2xl border-[1px] border-opacity-20 border-black text-zinc-200"
 >
   <ul class="pt-3 flex flex-col gap-3 h-14">
     <li class="flex justify-center items-end hover:text-xl">
@@ -10,15 +11,20 @@
   <hr class="w-11/12 m-auto mt-3 border-gray-500" />
 
   <ul class="pt-5 flex flex-col gap-5 pl-8">
-    <li class="flex items-end !text-blue-400 hover">
-      <i class="las la-home mr-3"></i>
-      <p class="!m-0 text-xs">INÍCIO</p>
-    </li>
-    <li class="flex items-end">
-      <i class="las la-chart-area mr-3"></i>
-      <p class="!m-0 text-xs">DASHBOARD</p>
-    </li>
-    <li class="flex items-end">
+    <a routerLink="/inicio">
+      <li #navItem class="flex items-end" id="inicio">
+        <i class="las la-home mr-3"></i>
+        <p class="!m-0 text-xs">INÍCIO</p>
+      </li>
+    </a>
+    <a routerLink="/dashboard">
+      <li #navItem class="flex items-end" id="dashboard">
+        <i class="las la-chart-area mr-3"></i>
+        <p class="!m-0 text-xs">DASHBOARD</p>
+      </li>
+    </a>
+
+    <li #navItem class="flex items-end" id="relatorio">
       <i class="las la-file-pdf mr-3"></i>
       <p class="!m-0 text-xs">RELATÓRIO</p>
     </li>

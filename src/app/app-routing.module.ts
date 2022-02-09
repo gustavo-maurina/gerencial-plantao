@@ -11,6 +11,7 @@ import {
   redirectLoggedInTo,
   canActivate,
 } from '@angular/fire/auth-guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToAccount = () => redirectLoggedInTo(['inicio']);
@@ -28,9 +29,10 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       { path: 'inicio', component: InicioComponent },
+      { path: 'dashboard', component: DashboardComponent },
     ],
   },
-  /** Rotas carregadas fora do sistema */
+  /** Rotas carregadas fora da parte administrativa do sistema */
   {
     component: LoginComponent,
     path: 'login',
