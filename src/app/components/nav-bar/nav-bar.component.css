@@ -2,9 +2,10 @@ li {
   cursor: pointer;
 }
 
-/* li p {
+li p,
+li i {
   transition: 300ms;
-} */
+}
 
 li:hover p {
   font-size: 0.85rem !important;
