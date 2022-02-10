@@ -29,3 +29,8 @@ mat-form-field.mat-form-field.mat-form-field-appearance-outline
 .mat-form-field-empty.mat-form-field-label {
   font-size: 15px;
 }
+
+.mat-table {
+  width: 100%;
+  background-color: transparent;
+}

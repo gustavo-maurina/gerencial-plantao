@@ -12,6 +12,7 @@ import {
   canActivate,
 } from '@angular/fire/auth-guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToAccount = () => redirectLoggedInTo(['inicio']);
@@ -30,6 +31,7 @@ const routes: Routes = [
       },
       { path: 'inicio', component: InicioComponent },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'usuarios', component: UsuariosComponent },
     ],
   },
   /** Rotas carregadas fora da parte administrativa do sistema */

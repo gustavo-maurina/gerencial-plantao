@@ -1,0 +1,48 @@
+/* Wrapper do conteudo exibido na view administrativa */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Card que envolve tabela e criar/pesquisar */
+.tableCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 7px 0 #00000047;
+}
+
+.tableCard input {
+  border-bottom: 1px solid rgba(117, 117, 117, 0.267);
+  padding: 0 10px;
+}
+
+.tableCard input:focus-visible {
+  outline-color: rgba(98, 158, 255, 0.644);
+}
+
+/* Botão para criar no CRUD */
+.buttonCriar {
+  background-color: rgb(108, 200, 108);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.buttonCriar p {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+}
+.buttonCriar i {
+  font-size: 16px;
+}

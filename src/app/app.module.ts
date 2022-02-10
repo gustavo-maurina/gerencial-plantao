@@ -25,6 +25,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './RequestInterceptor';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -37,9 +40,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CriarContaMedicoComponent,
     CriarContaHospitalComponent,
     DashboardComponent,
+    UsuariosComponent,
   ],
   imports: [
-    /* Módulos da aplicação */
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -47,6 +50,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ReactiveFormsModule,
     HttpClientModule,
     /* Módulos de terceiros */
+    MatTableModule,
+    LoadingBarRouterModule,
     MatInputModule,
     MatButtonModule,
     NgxChartsModule,
