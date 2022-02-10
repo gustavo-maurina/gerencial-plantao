@@ -18,11 +18,15 @@
   box-shadow: 0 3px 7px 0 #00000047;
 }
 
+/* Campo pesquisa nas tabelas */
 .tableCard input {
-  border-bottom: 1px solid rgba(117, 117, 117, 0.267);
+  border: none;
+  width: 200px;
+  background-color: rgba(222, 222, 222, 0.3);
+  border-radius: 5px;
   padding: 0 10px;
+  height: 100%;
 }
-
 .tableCard input:focus-visible {
   outline-color: rgba(98, 158, 255, 0.644);
 }
@@ -34,15 +38,17 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
-
 .buttonCriar p {
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 16px;
+  font-size: 0.85rem;
 }
 .buttonCriar i {
   font-size: 16px;
+}
+.exportar {
+  background-color: rgb(255, 136, 0);
 }

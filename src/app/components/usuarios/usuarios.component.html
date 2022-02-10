@@ -1,10 +1,25 @@
 <div class="contentWrapper">
   <div class="tableCard">
     <div class="flex justify-between">
-      <button class="buttonCriar">
-        <p><i class="las la-plus"></i>Novo usuário</p>
-      </button>
-      <input type="text" name="search" placeholder="Pesquisar..." />
+      <div>
+        <button class="buttonCriar exportar">
+          <p><i class="las la-file"></i>EXPORTAR</p>
+        </button>
+      </div>
+      <div class="flex items-center">
+        <input
+          type="text"
+          name="search"
+          placeholder="Buscar..."
+          (keydown)="filter($event)"
+        />
+        <i class="las la-search -ml-7 text-gray-400"></i>
+      </div>
+      <div>
+        <button class="buttonCriar">
+          <p><i class="las la-plus"></i>CRIAR USUÁRIO</p>
+        </button>
+      </div>
     </div>
     <div>
       <table mat-table [dataSource]="dataSource">
