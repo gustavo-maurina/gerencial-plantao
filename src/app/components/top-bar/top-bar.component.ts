@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -31,6 +31,10 @@ export class TopBarComponent implements OnInit {
   iniciais: string | undefined;
 
   createTopBarTitle() {
+    if (!this.url) {
+      this.titleFormatado = 'Início';
+      return;
+    }
     const firstLetterUpper = this.url[0].toUpperCase();
     this.titleFormatado = firstLetterUpper + this.url.slice(1, this.url.length);
   }

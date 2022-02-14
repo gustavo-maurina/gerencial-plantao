@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 
 const ELEMENT_DATA: any[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -20,15 +22,47 @@ const ELEMENT_DATA: any[] = [
   styleUrls: ['./usuarios.component.css'],
 })
 export class UsuariosComponent implements OnInit {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.configureSearchDebounce();
+    this.fetchAll();
+  }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  searchSub = new Subject<string>();
+  displayedColumns: string[] = ['nome', 'email', 'criado_em'];
+  dataSource = new MatTableDataSource([]);
 
   filter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    const filterTxt = (event.target as HTMLInputElement).value;
+
+    this.searchSub.next(filterTxt);
+  }
+
+  configureSearchDebounce() {
+    this.searchSub
+      .pipe(debounceTime(400), distinctUntilChanged())
+      .subscribe((filterValue: string) => {
+        if (filterValue.length < 2) return this.fetchAll();
+        this.fetchWithText(filterValue);
+      });
+  }
+
+  fetchWithText(text: string) {
+    this.http
+      .get('http://localhost:8080/usuario', {
+        params: { search: text },
+      })
+      .subscribe((res: any) => {
+        this.dataSource.data = res;
+        console.log(this.dataSource.data);
+      });
+  }
+
+  fetchAll() {
+    this.http.get('http://localhost:8080/usuario').subscribe((res: any) => {
+      console.log(res);
+      this.dataSource.data = res;
+    });
   }
 }

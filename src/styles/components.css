@@ -42,6 +42,7 @@
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
+  height: 100%;
 }
 .buttonCriar p {
   padding: 0;
@@ -56,4 +57,5 @@
 }
 .exportar {
   background-color: rgb(255, 165, 62);
+  height: 100%;
 }
