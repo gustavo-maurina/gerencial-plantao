@@ -28,6 +28,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     HttpClientModule,
     /* Módulos de terceiros */
+    MatSortModule,
     MatTableModule,
     LoadingBarRouterModule,
     MatInputModule,
