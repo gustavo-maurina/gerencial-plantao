@@ -1,8 +1,8 @@
 # Gerencial
 
-## Development server
+## Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Rode `ng serve` para rodar em dev. Acesse `http://localhost:4200/`.
 
 ## Roteamento
 
